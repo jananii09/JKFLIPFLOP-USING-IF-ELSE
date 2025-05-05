@@ -34,15 +34,44 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Use module projname(input,output) to start the Verilog programming.
+
+2.Assign inputs and outputs using the word input and output respectively.
+
+3.Use defined keywords like wire,assign and required logic gates to represent the boolean expression.
+
+4.Use each output to represent one for difference and the other for borrow.
+
+5.End the verilog program using keyword endmodule
 
 **PROGRAM**
+```
+module jkff(j,k,clk,q,qbar);
+input j,k,clk;
+output reg q,qbar;
+initial 
+begin
+q=1'b0;
+q=1'b1;
+end
+always @(posedge clk)
+begin
+q<=(j&~q)|(~k&q);
+qbar<=~q;
+end
+endmodule
+```
+ Developed by: JANNAI SHREE A RegisterNumber: 212224100023
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![Screenshot 2025-05-05 202553](https://github.com/user-attachments/assets/c605a0e0-3166-46ae-a7df-a8cac423926e)
+
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![Screenshot 2025-05-05 202605](https://github.com/user-attachments/assets/ffe47c26-a958-48c0-a45f-0312890dbdc6)
+
 
 **RESULTS**
+Sucessfully implemented JK flipflop using verilog and validating their functionality using their functional tables
